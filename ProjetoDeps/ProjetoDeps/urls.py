@@ -19,4 +19,6 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'gerenciador_fornecedor.views.index'),#executar quando requisição for feita para a url /
+    url(r'^adiciona/$', 'gerenciador_fornecedor.views.adiciona'),
+    url(r'^item/(?P<nr_item>\d+)/$', 'gerenciador_fornecedor.views.item'),
 ]

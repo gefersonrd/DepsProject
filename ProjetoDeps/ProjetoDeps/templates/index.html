@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block corpo %}
+
+<a href="/adiciona/"> Adicionar novo </a>
+
+<ul>
+
+{% for item in lista_itens %}
+	<li><a href="/item/{{ item.id }}">{{ item.telefone }} {{ item.nome }}</a></li>
+{% empty %}
+	<li>Sem itens na lista </li>
+{% endfor %}
+
+</ul>
+
+<ul>
+
+{% for item in lista_itens_endereco %}
+	<li><a href="/item/{{ item.id }}">{{ item.rua }} {{ item.cidade }}</a></li>
+{% empty %}
+	<li>Sem itens na lista </li>
+{% endfor %}
+
+</ul>
+
+{% endblock %}

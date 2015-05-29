@@ -15,6 +15,9 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+#BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
+ROOTDIR = os.path.realpath(os.path.dirname(__file__))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -56,7 +59,7 @@ ROOT_URLCONF = 'ProjetoDeps.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(ROOTDIR, "templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -71,6 +74,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ProjetoDeps.wsgi.application'
 
+
+TEMPLATE_DIRS = (
+    os.path.join(ROOTDIR, "templates"),
+)
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
