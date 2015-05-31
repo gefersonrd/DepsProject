@@ -1,0 +1,15 @@
+-- object: public."Conta" | type: TABLE --
+-- DROP TABLE IF EXISTS public."Conta" CASCADE;
+CREATE TABLE public."Conta"(
+	codigo smallint NOT NULL,
+	descricao varchar NOT NULL,
+	data_vencimento date NOT NULL,
+	valor float NOT NULL,
+	data_pagamento date,
+	valor_pago float,
+	CONSTRAINT conta_pk PRIMARY KEY (codigo)
+
+);
+-- ddl-end --
+ALTER TABLE public."Conta" OWNER TO postgres;
+-- ddl-end --
